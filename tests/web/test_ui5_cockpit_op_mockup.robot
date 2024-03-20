@@ -7,6 +7,7 @@ Library     SeleniumLibrary
 ## COMMUN DATA
 ${base_url}        https://afry-br.github.io
 ${home_url}        ${base_url}/ui5_mock_test/
+${browse_name}     chrome
 
 ## Page - Cockpit Order Process
 ### Dados de entrada
@@ -27,8 +28,10 @@ ${table_ordem_1}            //td[@id="__item5-__xmlview0--table_ordens-0-cell0"]
 *** Test Cases ***
 Open Page - Cockpit Order Process
     Log             message="URL "+${home_url}    level=INFO
-    Open Browser    url=${home_url}               browser=chrome
+    Open Browser    url=${home_url}    browser=${browse_name}
+    Maximize Browser Window
     Wait Until Element Is Visible    locator=${button_buscar}    timeout=10
+    Capture Page Screenshot
     Input Text      ${input_combo_planta}    ${cod_plant}
     Press Keys      ${input_combo_planta}    ENTER
     Input Text      ${input_dt_ini_perio}    ${dt_ini}
@@ -37,8 +40,10 @@ Open Page - Cockpit Order Process
     Press Keys      ${input_dt_fim_perio}    TAB
     Click Element   ${button_buscar}
     Wait Until Element Is Visible            ${table_ordem_1}    timeout=10
+    Capture Page Screenshot
     Click Element   ${table_ordem_1}
     Wait Until Element Is Visible            ${subtela_op}       timeout=10
     Element Text Should Be                   ${subtela_op}       expected=${order_num}
-    Sleep           3
+    Page Should Contain        text=${order_num}
+    Capture Page Screenshot
     Close Browser
