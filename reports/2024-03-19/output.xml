@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.9.6 on win32)" generated="2024-03-20T08:18:15.127485" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Ui5 Cockpit Op Mockup" source="C:\Users\ych885\Sources\robot-framework-tests\tests\web\test_ui5_cockpit_op_mockup.robot">
+<test id="s1-t1" name="Open Page - Cockpit Order Process" line="28">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-20T08:18:15.459056" level="INFO">"URL "+https://afry-br.github.io/ui5_mock_test/</msg>
+<arg>message="URL "+${home_url}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-20T08:18:15.459056" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:15.459056" level="INFO">Opening browser 'chrome' to base url 'https://afry-br.github.io/ui5_mock_test/'.</msg>
+<arg>url=${home_url}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-03-20T08:18:15.459056" elapsed="8.218651"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${button_buscar}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-20T08:18:23.679005" elapsed="1.624701"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:25.303706" level="INFO">Typing text '0001' into text field '//input[@id="__xmlview0--combo_plant-inner"]'.</msg>
+<arg>${input_combo_planta}</arg>
+<arg>${cod_plant}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T08:18:25.303706" elapsed="0.294267"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:25.599975" level="INFO">Sending key(s) ('ENTER',) to //input[@id="__xmlview0--combo_plant-inner"] element.</msg>
+<msg time="2024-03-20T08:18:26.155668" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-03-20T08:18:26.155668" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_combo_planta}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-20T08:18:25.598973" elapsed="0.576106"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:26.175079" level="INFO">Typing text '14/05/2021' into text field '//input[@id="__xmlview0--dt_ini_perio-inner"]'.</msg>
+<arg>${input_dt_ini_perio}</arg>
+<arg>${dt_ini}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T08:18:26.175079" elapsed="0.151142"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:26.326221" level="INFO">Sending key(s) ('TAB',) to //input[@id="__xmlview0--dt_ini_perio-inner"] element.</msg>
+<msg time="2024-03-20T08:18:26.640022" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2024-03-20T08:18:26.640022" level="INFO">Releasing special key TAB.</msg>
+<arg>${input_dt_ini_perio}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-20T08:18:26.326221" elapsed="0.333471"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:26.659692" level="INFO">Typing text '15/05/2021' into text field '//input[@id="__xmlview0--dt_fim_perio-inner"]'.</msg>
+<arg>${input_dt_fim_perio}</arg>
+<arg>${dt_fim}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T08:18:26.659692" elapsed="0.123567"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:26.783259" level="INFO">Sending key(s) ('TAB',) to //input[@id="__xmlview0--dt_fim_perio-inner"] element.</msg>
+<msg time="2024-03-20T08:18:27.090821" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2024-03-20T08:18:27.090821" level="INFO">Releasing special key TAB.</msg>
+<arg>${input_dt_fim_perio}</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-03-20T08:18:26.783259" elapsed="0.323193"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:27.106452" level="INFO">Clicking element '//button[@id="__xmlview0--bt_search"]'.</msg>
+<arg>${button_buscar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T08:18:27.106452" elapsed="0.097567"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${table_ordem_1}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-20T08:18:27.206023" elapsed="0.037820"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:27.243843" level="INFO">Clicking element '//td[@id="__item5-__xmlview0--table_ordens-0-cell0"]'.</msg>
+<arg>${table_ordem_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-20T08:18:27.243843" elapsed="0.219195"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${subtela_op}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-20T08:18:27.464040" elapsed="0.691784"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-03-20T08:18:28.155824" level="INFO">Verifying element '//span[@id="__text20"]' contains exact text '012345678'.</msg>
+<arg>${subtela_op}</arg>
+<arg>expected=${order_num}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-03-20T08:18:28.155824" elapsed="0.032412"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-20T08:18:31.202539" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-20T08:18:28.189232" elapsed="3.013307"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-03-20T08:18:31.202539" elapsed="2.181091"/>
+</kw>
+<status status="PASS" start="2024-03-20T08:18:15.459056" elapsed="17.925888"/>
+</test>
+<status status="PASS" start="2024-03-20T08:18:15.129661" elapsed="18.255855"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Ui5 Cockpit Op Mockup">Test Ui5 Cockpit Op Mockup</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
