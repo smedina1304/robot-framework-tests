@@ -1,147 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.9.6 on win32)" generated="2024-03-20T09:20:43.670748" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Ui5 Cockpit Op Mockup" source="C:\Users\ych885\Sources\robot-framework-tests\tests\web\test_ui5_cockpit_op_mockup.robot">
-<test id="s1-t1" name="Open Page - Cockpit Order Process" line="29">
+<robot generator="Robot 7.0 (Python 3.9.6 on win32)" generated="2024-03-20T09:36:03.455098" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\ych885\Sources\robot-framework-tests\tests">
+<suite id="s1-s1" name="Apis" source="C:\Users\ych885\Sources\robot-framework-tests\tests\apis">
+<suite id="s1-s1-s1" name="Test Reqres Api" source="C:\Users\ych885\Sources\robot-framework-tests\tests\apis\test_reqres_api.robot">
+<test id="s1-s1-s1-t1" name="Quick Get Request List Users" line="13">
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-03-20T09:20:43.936669" level="INFO">"URL "+https://afry-br.github.io/ui5_mock_test/</msg>
+<msg time="2024-03-20T09:36:03.723421" level="INFO">https://reqres.in/api/users</msg>
+<arg>${api_users}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-20T09:36:03.722481" elapsed="0.000940"/>
+</kw>
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-20T09:36:04.791423" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-20T09:36:04.791423" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 20 Mar 2024 12:35:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1710938125&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=N%2ByQZ1UFlItCoK1FyEYqrg9JIFF4g%2BPfKjRW8m%2FQOPM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1710938125&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=N%2ByQZ1UFlItCoK1FyEYqrg9JIFF4g%2BPfKjRW8m%2FQOPM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'MISS', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '8675bdf1ebc3799d-RAO', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-03-20T09:36:04.791423" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${api_users}</arg>
+<arg>params=page=${page_id}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-20T09:36:03.723421" elapsed="1.068002"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-20T09:36:04.793421" level="INFO">{'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'last_name': 'Ferguson', 'avatar': 'https://reqres.in/img/faces/8-image.jpg'}, {'id': 9, 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'last_name': 'Funke', 'avatar': 'https://reqres.in/img/faces/9-image.jpg'}, {'id': 10, 'email': 'byron.fields@reqres.in', 'first_name': 'Byron', 'last_name': 'Fields', 'avatar': 'https://reqres.in/img/faces/10-image.jpg'}, {'id': 11, 'email': 'george.edwards@reqres.in', 'first_name': 'George', 'last_name': 'Edwards', 'avatar': 'https://reqres.in/img/faces/11-image.jpg'}, {'id': 12, 'email': 'rachel.howell@reqres.in', 'first_name': 'Rachel', 'last_name': 'Howell', 'avatar': 'https://reqres.in/img/faces/12-image.jpg'}], 'support': {'url': 'https://reqres.in/#support-heading', 'text': 'To keep ReqRes free, contributions towards server costs are appreciated!'}}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-03-20T09:36:04.792423" elapsed="0.001999"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-03-20T09:36:04.795421" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>6</arg>
+<arg>${response.json()}[per_page]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-20T09:36:04.794422" elapsed="0.002001"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-03-20T09:36:04.797423" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>12</arg>
+<arg>${response.json()}[total]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-20T09:36:04.796423" elapsed="0.001000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-03-20T09:36:04.799423" level="INFO">Argument types are:
+&lt;class 'str'&gt;
+&lt;class 'int'&gt;</msg>
+<arg>7</arg>
+<arg>${response.json()}[data][0][id]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-03-20T09:36:04.798424" elapsed="0.002001"/>
+</kw>
+<status status="PASS" start="2024-03-20T09:36:03.721423" elapsed="1.080001"/>
+</test>
+<status status="PASS" start="2024-03-20T09:36:03.505098" elapsed="1.298325"/>
+</suite>
+<status status="PASS" start="2024-03-20T09:36:03.503097" elapsed="1.302324"/>
+</suite>
+<suite id="s1-s2" name="Web" source="C:\Users\ych885\Sources\robot-framework-tests\tests\web">
+<suite id="s1-s2-s1" name="Test Ui5 Cockpit Op Mockup" source="C:\Users\ych885\Sources\robot-framework-tests\tests\web\test_ui5_cockpit_op_mockup.robot">
+<test id="s1-s2-s1-t1" name="Open Page - Cockpit Order Process" line="29">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-03-20T09:36:05.214442" level="INFO">"URL "+https://afry-br.github.io/ui5_mock_test/</msg>
 <arg>message="URL "+${home_url}</arg>
 <arg>level=INFO</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-03-20T09:20:43.936669" elapsed="0.000000"/>
+<status status="PASS" start="2024-03-20T09:36:05.213423" elapsed="0.002001"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:43.936669" level="INFO">Opening browser 'chrome' to base url 'https://afry-br.github.io/ui5_mock_test/'.</msg>
+<msg time="2024-03-20T09:36:05.220475" level="INFO">Opening browser 'chrome' to base url 'https://afry-br.github.io/ui5_mock_test/'.</msg>
 <arg>url=${home_url}</arg>
 <arg>browser=${browse_name}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-03-20T09:20:43.936669" elapsed="6.727485"/>
+<status status="PASS" start="2024-03-20T09:36:05.216422" elapsed="6.787890"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-03-20T09:20:50.665150" elapsed="0.126559"/>
+<status status="PASS" start="2024-03-20T09:36:12.005312" elapsed="0.127636"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>locator=${button_buscar}</arg>
 <arg>timeout=10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-20T09:20:50.792367" elapsed="1.756800"/>
+<status status="PASS" start="2024-03-20T09:36:12.133948" elapsed="2.383900"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:52.862819" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-20T09:36:14.842851" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-03-20T09:20:52.549167" elapsed="0.313652"/>
+<status status="PASS" start="2024-03-20T09:36:14.518852" elapsed="0.325004"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:52.862819" level="INFO">Typing text '0001' into text field '//input[@id="__xmlview0--combo_plant-inner"]'.</msg>
+<msg time="2024-03-20T09:36:14.846870" level="INFO">Typing text '0001' into text field '//input[@id="__xmlview0--combo_plant-inner"]'.</msg>
 <arg>${input_combo_planta}</arg>
 <arg>${cod_plant}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:20:52.862819" elapsed="0.205468"/>
+<status status="PASS" start="2024-03-20T09:36:14.845866" elapsed="0.246990"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:53.070784" level="INFO">Sending key(s) ('ENTER',) to //input[@id="__xmlview0--combo_plant-inner"] element.</msg>
-<msg time="2024-03-20T09:20:53.533049" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2024-03-20T09:20:53.533049" level="INFO">Releasing special key ENTER.</msg>
+<msg time="2024-03-20T09:36:15.095855" level="INFO">Sending key(s) ('ENTER',) to //input[@id="__xmlview0--combo_plant-inner"] element.</msg>
+<msg time="2024-03-20T09:36:15.618937" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2024-03-20T09:36:15.618937" level="INFO">Releasing special key ENTER.</msg>
 <arg>${input_combo_planta}</arg>
 <arg>ENTER</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-03-20T09:20:53.069291" elapsed="0.481688"/>
+<status status="PASS" start="2024-03-20T09:36:15.094851" elapsed="0.540056"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:53.550979" level="INFO">Typing text '14/05/2021' into text field '//input[@id="__xmlview0--dt_ini_perio-inner"]'.</msg>
+<msg time="2024-03-20T09:36:15.636904" level="INFO">Typing text '14/05/2021' into text field '//input[@id="__xmlview0--dt_ini_perio-inner"]'.</msg>
 <arg>${input_dt_ini_perio}</arg>
 <arg>${dt_ini}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:20:53.550979" elapsed="0.115775"/>
+<status status="PASS" start="2024-03-20T09:36:15.635909" elapsed="0.170007"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:53.666754" level="INFO">Sending key(s) ('TAB',) to //input[@id="__xmlview0--dt_ini_perio-inner"] element.</msg>
-<msg time="2024-03-20T09:20:53.966548" level="INFO">Pressing special key TAB to element.</msg>
-<msg time="2024-03-20T09:20:53.966548" level="INFO">Releasing special key TAB.</msg>
+<msg time="2024-03-20T09:36:15.807963" level="INFO">Sending key(s) ('TAB',) to //input[@id="__xmlview0--dt_ini_perio-inner"] element.</msg>
+<msg time="2024-03-20T09:36:16.117276" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2024-03-20T09:36:16.117276" level="INFO">Releasing special key TAB.</msg>
 <arg>${input_dt_ini_perio}</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-03-20T09:20:53.666754" elapsed="0.318270"/>
+<status status="PASS" start="2024-03-20T09:36:15.806921" elapsed="0.333372"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:53.985024" level="INFO">Typing text '15/05/2021' into text field '//input[@id="__xmlview0--dt_fim_perio-inner"]'.</msg>
+<msg time="2024-03-20T09:36:16.144270" level="INFO">Typing text '15/05/2021' into text field '//input[@id="__xmlview0--dt_fim_perio-inner"]'.</msg>
 <arg>${input_dt_fim_perio}</arg>
 <arg>${dt_fim}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:20:53.985024" elapsed="0.080823"/>
+<status status="PASS" start="2024-03-20T09:36:16.143284" elapsed="0.106023"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:54.067858" level="INFO">Sending key(s) ('TAB',) to //input[@id="__xmlview0--dt_fim_perio-inner"] element.</msg>
-<msg time="2024-03-20T09:20:54.368231" level="INFO">Pressing special key TAB to element.</msg>
-<msg time="2024-03-20T09:20:54.368231" level="INFO">Releasing special key TAB.</msg>
+<msg time="2024-03-20T09:36:16.251310" level="INFO">Sending key(s) ('TAB',) to //input[@id="__xmlview0--dt_fim_perio-inner"] element.</msg>
+<msg time="2024-03-20T09:36:16.540247" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2024-03-20T09:36:16.540247" level="INFO">Releasing special key TAB.</msg>
 <arg>${input_dt_fim_perio}</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-03-20T09:20:54.066848" elapsed="0.318785"/>
+<status status="PASS" start="2024-03-20T09:36:16.250313" elapsed="0.307309"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:54.385633" level="INFO">Clicking element '//button[@id="__xmlview0--bt_search"]'.</msg>
+<msg time="2024-03-20T09:36:16.558621" level="INFO">Clicking element '//button[@id="__xmlview0--bt_search"]'.</msg>
 <arg>${button_buscar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:20:54.385633" elapsed="0.093995"/>
+<status status="PASS" start="2024-03-20T09:36:16.558621" elapsed="0.106005"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${table_ordem_1}</arg>
 <arg>timeout=10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-20T09:20:54.480628" elapsed="0.038487"/>
+<status status="PASS" start="2024-03-20T09:36:16.666639" elapsed="0.053990"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:54.763191" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-20T09:36:16.992634" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-03-20T09:20:54.519115" elapsed="0.244076"/>
+<status status="PASS" start="2024-03-20T09:36:16.721623" elapsed="0.271011"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:54.763191" level="INFO">Clicking element '//td[@id="__item5-__xmlview0--table_ordens-0-cell0"]'.</msg>
+<msg time="2024-03-20T09:36:16.994636" level="INFO">Clicking element '//td[@id="__item5-__xmlview0--table_ordens-0-cell0"]'.</msg>
 <arg>${table_ordem_1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-20T09:20:54.763191" elapsed="0.229095"/>
+<status status="PASS" start="2024-03-20T09:36:16.993637" elapsed="0.194369"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${subtela_op}</arg>
 <arg>timeout=10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-20T09:20:54.992286" elapsed="0.771100"/>
+<status status="PASS" start="2024-03-20T09:36:17.189000" elapsed="0.711555"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:55.763386" level="INFO">Verifying element '//span[@id="__text20"]' contains exact text '012345678'.</msg>
+<msg time="2024-03-20T09:36:17.901567" level="INFO">Verifying element '//span[@id="__text20"]' contains exact text '012345678'.</msg>
 <arg>${subtela_op}</arg>
 <arg>expected=${order_num}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2024-03-20T09:20:55.763386" elapsed="0.038587"/>
+<status status="PASS" start="2024-03-20T09:36:17.901567" elapsed="0.028788"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:55.818605" level="INFO">Current page contains text '012345678'.</msg>
+<msg time="2024-03-20T09:36:17.953630" level="INFO">Current page contains text '012345678'.</msg>
 <arg>text=${order_num}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-03-20T09:20:55.803020" elapsed="0.015585"/>
+<status status="PASS" start="2024-03-20T09:36:17.931358" elapsed="0.023273"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-03-20T09:20:55.988486" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-20T09:36:18.124630" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-03-20T09:20:55.818605" elapsed="0.169881"/>
+<status status="PASS" start="2024-03-20T09:36:17.955629" elapsed="0.169001"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-03-20T09:20:55.988486" elapsed="2.319778"/>
+<status status="PASS" start="2024-03-20T09:36:18.125640" elapsed="2.493825"/>
 </kw>
-<status status="PASS" start="2024-03-20T09:20:43.936669" elapsed="14.372185"/>
+<status status="PASS" start="2024-03-20T09:36:05.186424" elapsed="15.434566"/>
 </test>
-<status status="PASS" start="2024-03-20T09:20:43.670748" elapsed="14.639724"/>
+<status status="PASS" start="2024-03-20T09:36:04.813423" elapsed="15.808568"/>
+</suite>
+<status status="PASS" start="2024-03-20T09:36:04.808428" elapsed="15.815572"/>
+</suite>
+<status status="PASS" start="2024-03-20T09:36:03.458099" elapsed="17.167891"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test Ui5 Cockpit Op Mockup">Test Ui5 Cockpit Op Mockup</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Apis">Tests.Apis</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test Reqres Api">Tests.Apis.Test Reqres Api</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Web">Tests.Web</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s1" name="Test Ui5 Cockpit Op Mockup">Tests.Web.Test Ui5 Cockpit Op Mockup</stat>
 </suite>
 </statistics>
 <errors>
