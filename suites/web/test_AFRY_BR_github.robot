@@ -7,15 +7,10 @@ Resource          ./resources/page_blender_mon.resource
 Suite Setup       Use Browser
 Suite Teardown    Close Browser
 
-*** Keywords ***
-Use Browser
-    Open Browser    url=${page_cockpit_data.url}    browser=${afry_br_github.browse_name}
-
 *** Test Cases ***
 SAP UI5 - Page - Cockpit Order Process
     Log      message="URL: "+${page_cockpit_data.url}    level=INFO
     Go To    url=${page_cockpit_data.url}
-    Maximize Browser Window
     Wait Until Element Is Visible    locator=${page_cockpit_element.button_buscar}    timeout=10
     Capture Page Screenshot
     Input Text      ${page_cockpit_element.input_combo_planta}    ${page_cockpit_data.cod_plant}
@@ -36,7 +31,6 @@ SAP UI5 - Page - Cockpit Order Process
 SAP UI5 - Page - Blender Monitor
     Log      message="URL: "+${page_blender_mon_data.url}    level=INFO
     Go To    url=${page_blender_mon_data.url}
-    Maximize Browser Window
     Wait Until Element Is Visible   ${page_blender_mon_element.rb_buffer}       timeout=10
     Page Should Contain        text=${page_blender_mon_element.header_blender}
     Sleep    1
